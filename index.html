@@ -92,7 +92,8 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;mar
 /* ---------- BELIEF ---------- */
 .belief{padding:40px 0 120px}
 .belief h2{margin-bottom:24px}
-.belief blockquote{margin:0;max-width:760px;font-size:clamp(17px,1.5vw,20px);font-weight:300;line-height:1.65}
+.belief blockquote{margin:0;font-size:clamp(17px,1.5vw,20px);font-weight:300;line-height:1.65}
+@media (min-width:1000px){.belief blockquote{white-space:nowrap}}
 
 /* ---------- FULL-BLEED ---------- */
 .bleed{height:clamp(320px,49vw,702px);background:url("assets/img/design-building.webp") center 60%/cover}
