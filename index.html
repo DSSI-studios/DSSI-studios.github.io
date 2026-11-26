@@ -90,9 +90,9 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;mar
 @media (max-width:700px){.cols{grid-template-columns:1fr}.what{padding:90px 0 70px}}
 
 /* ---------- BELIEF ---------- */
-.belief{padding:40px 0 120px;text-align:center}
-.belief h2{color:var(--pink);font-size:clamp(44px,6vw,75px);margin-bottom:30px}
-.belief blockquote{margin:0 auto;max-width:960px;font-size:clamp(22px,2.6vw,35px);font-weight:300;line-height:1.35}
+.belief{padding:40px 0 120px}
+.belief h2{margin-bottom:24px}
+.belief blockquote{margin:0;max-width:760px;font-size:clamp(17px,1.5vw,20px);font-weight:300;line-height:1.65}
 
 /* ---------- FULL-BLEED ---------- */
 .bleed{height:clamp(320px,49vw,702px);background:url("assets/img/design-building.webp") center 60%/cover}
@@ -162,9 +162,12 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;mar
 .contact .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;padding-bottom:160px}
 .contact h2{font-size:clamp(44px,6vw,75px);margin-bottom:24px}
 .contact .info{display:grid;gap:26px;align-content:start;padding-top:8px}
-.contact .info b{display:block;font-family:var(--display);font-weight:400;letter-spacing:.26em;font-size:12px;color:var(--pink);margin-bottom:6px;text-transform:uppercase}
+.contact .info b{display:block;font-family:var(--display);font-weight:400;letter-spacing:.26em;font-size:12px;color:#fff;margin-bottom:6px;text-transform:uppercase}
 .contact .info a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
-.contact .info a:hover{border-color:var(--pink)}
+.contact .info a:hover{border-color:#fff}
+/* on black backgrounds: white instead of pink for legibility */
+.hero .btn,.prog .btn,.works-head .btn,.hero .circle,.works-head .circle{border-color:#fff;color:#fff}
+.hero .btn:hover,.prog .btn:hover,.works-head .btn:hover,.hero .circle:hover,.works-head .circle:hover{background:#fff;color:var(--ink)}
 .skyline{position:absolute;left:0;right:0;bottom:44px;height:clamp(60px,12vw,180px);background:url("assets/img/skyline.webp") bottom center/cover repeat-x;opacity:.55;pointer-events:none}
 footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.12);padding:14px 0;font-size:12px;opacity:.75}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
@@ -235,7 +238,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 <!-- ============ BELIEF ============ -->
 <section class="belief">
   <div class="wrap reveal">
-    <h2>Our Belief</h2>
+    <div class="label">Belief</div>
+    <h2 class="big">Our Belief</h2>
     <blockquote>“Good design isn't about making things look beautiful. It's about making people's lives better.”</blockquote>
   </div>
 </section>
@@ -295,7 +299,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
     <div class="box reveal">
       <div class="ph" role="img" aria-label="Executive workshop session"></div>
       <div class="txt">
-        <div class="label" style="color:var(--pink)">Now enrolling</div>
+        <div class="label">Now enrolling</div>
         <h2>Driving Organisational Effectiveness Through Employee Experience</h2>
         <p style="opacity:.85;margin:0">A residential executive retreat by DSSI Studios. Leaders put a number on their organisation's hidden <b style="font-weight:600">Friction Tax</b> and leave with a costed diagnosis and a 30-day pilot plan.</p>
         <div class="facts"><span>10 practical tools</span><span>7 design phases</span><span>20 seats</span><span>Certificate from IIT Hyderabad</span></div>
@@ -343,6 +347,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
     </div>
     <div class="info reveal">
       <div><b>Studio</b>DSSI Studios, Department of Design<br>Indian Institute of Technology Hyderabad<br>Kandi, Sangareddy, Telangana</div>
+      <div><b>Email</b><a href="mailto:srikaravr@des.iith.ac.in">Email Prof. Srikar AVR</a></div>
     </div>
   </div>
   <div class="skyline" aria-hidden="true"></div>
