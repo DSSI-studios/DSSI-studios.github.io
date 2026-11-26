@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSSI Studios | Department of Design, IIT Hyderabad</title>
+<meta name="description" content="DSSI Studios designs products, services, systems and spaces that create measurable impact for communities, institutions and governments. Department of Design, IIT Hyderabad.">
+<meta property="og:title" content="DSSI Studios | Department of Design, IIT Hyderabad">
+<meta property="og:description" content="We design products, services, systems and spaces that create measurable impact for communities, institutions and governments.">
+<meta property="og:image" content="https://dssi-studios.github.io/assets/img/og-image.jpg">
+<meta property="og:url" content="https://dssi-studios.github.io/">
+<link rel="preload" as="image" href="assets/img/campus-dusk.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=42dot+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#ff2d6e; --ink:#0a0a0a; --paper:#ffffff; --grey:#6d6d6d; --line:#e4e4e4;
+  --display:'Abel',system-ui,sans-serif; --body:'42dot Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:300;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+section{scroll-margin-top:0}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;margin:0;line-height:1.05;letter-spacing:.01em}
+.label{display:flex;align-items:center;gap:14px;font-family:var(--display);font-size:12px;letter-spacing:.32em;text-transform:uppercase;margin-bottom:22px}
+.label::after{content:"";width:64px;height:1px;background:currentColor;opacity:.6}
+.big{font-size:clamp(44px,6.4vw,78px)}
+.pink{color:var(--pink)}
+.btn{display:inline-flex;align-items:center;gap:34px;padding:21px 30px;border:1px solid var(--pink);color:var(--pink);background:transparent;
+  font-family:var(--display);font-size:13px;letter-spacing:.32em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .25s,color .25s}
+.btn::after{content:">";letter-spacing:0}
+.btn:hover{background:var(--pink);color:#fff}
+.circle{width:43px;height:43px;border-radius:50%;border:1px solid var(--pink);background:transparent;color:var(--pink);font:300 18px var(--body);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.circle:hover{background:var(--pink);color:#fff}
+.counter{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:300}
+.counter i{display:block;width:92px;height:1px;background:currentColor;opacity:.35;position:relative}
+.counter i b{position:absolute;left:0;top:-.5px;height:2px;background:var(--pink);transition:width .5s}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}*{transition:none!important;animation:none!important}}
+
+/* ---------- HEADER + MENU ---------- */
+.top{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:26px 32px;color:#fff;transition:background .3s,color .3s,padding .3s}
+.top.solid{background:rgba(10,10,10,.92);backdrop-filter:blur(8px);padding:16px 32px}
+.burger{width:44px;height:30px;border:0;background:none;cursor:pointer;position:relative;color:inherit;padding:0}
+.burger span{position:absolute;left:6px;width:31px;height:1.5px;background:currentColor;transition:transform .3s,top .3s}
+.burger span:nth-child(1){top:11px}.burger span:nth-child(2){top:18px}
+.menu-open .burger span:nth-child(1){top:15px;transform:rotate(45deg)}
+.menu-open .burger span:nth-child(2){top:15px;transform:rotate(-45deg)}
+.brand{font-family:var(--display);font-size:18px;letter-spacing:.28em;text-decoration:none}
+.top .cta{font-family:var(--display);font-size:12px;letter-spacing:.28em;text-decoration:none;border-bottom:1px solid var(--pink);padding-bottom:3px}
+.menu{position:fixed;inset:0;z-index:35;background:#fff;color:var(--ink);display:grid;grid-template-columns:1fr 1fr;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.menu-open .menu{opacity:1;visibility:visible}
+.menu-open .top{color:var(--ink);background:transparent}
+.menu .col{padding:120px 64px 64px;display:flex;flex-direction:column;justify-content:center}
+.menu nav a{display:block;font-family:var(--display);font-size:clamp(40px,5.4vw,64px);text-transform:uppercase;text-decoration:none;line-height:1.12;transition:color .2s,transform .2s}
+.menu nav a:hover{color:var(--pink);transform:translateX(8px)}
+.menu .disc{margin-top:44px;font-family:var(--display);font-size:15px;letter-spacing:.3em;line-height:1.8;text-transform:uppercase}
+.menu .side{background:url("assets/img/studio.webp") center/cover;position:relative}
+.menu .side::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent 60%)}
+.menu .side p{position:absolute;left:40px;bottom:32px;right:40px;z-index:1;color:#fff;margin:0;font-size:14px}
+@media (max-width:860px){.menu{grid-template-columns:1fr}.menu .side{display:none}.menu .col{padding:110px 32px 40px}.top .cta{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;height:100vh;min-height:620px;max-height:900px;background:#000;color:#fff;overflow:hidden}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.06);transition:opacity 1.2s ease,transform 7s ease}
+.slide.on{opacity:1;transform:scale(1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.25) 100%)}
+.hero .inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-size:clamp(48px,6.4vw,84px);letter-spacing:.02em}
+.hero p{max-width:530px;font-size:16px;font-weight:400;margin:22px 0 38px;opacity:.92}
+.hero .ctrl{position:absolute;z-index:3;right:32px;bottom:44px;display:flex;align-items:center;gap:26px}
+.hero .ctrl .counter{color:#fff}
+.hero .caption{position:absolute;z-index:3;left:32px;bottom:50px;font-family:var(--display);font-size:12px;letter-spacing:.3em;text-transform:uppercase;opacity:.8}
+@media (max-width:700px){.hero .caption{display:none}.hero .ctrl{right:24px;left:24px;justify-content:space-between}}
+
+/* ---------- WHAT WE DO ---------- */
+.what{padding:130px 0 110px}
+.what .grid{display:grid;grid-template-columns:1.1fr 2fr;gap:56px;align-items:start}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;padding-top:12px}
+.cols h3{font-size:clamp(26px,2.5vw,34px);color:var(--pink);margin-bottom:18px}
+.cols ul{list-style:none;margin:0;padding:0}
+.cols li{padding:7px 0;border-bottom:1px solid var(--line);font-size:15px}
+.what .btn{margin-top:54px}
+@media (max-width:980px){.what .grid{grid-template-columns:1fr}.cols{grid-template-columns:1fr 1fr 1fr}}
+@media (max-width:700px){.cols{grid-template-columns:1fr}.what{padding:90px 0 70px}}
+
+/* ---------- BELIEF ---------- */
+.belief{padding:40px 0 120px;text-align:center}
+.belief h2{color:var(--pink);font-size:clamp(44px,6vw,75px);margin-bottom:30px}
+.belief blockquote{margin:0 auto;max-width:960px;font-size:clamp(22px,2.6vw,35px);font-weight:300;line-height:1.35}
+
+/* ---------- FULL-BLEED ---------- */
+.bleed{height:clamp(320px,49vw,702px);background:url("assets/img/design-building.webp") center 60%/cover}
+
+/* ---------- IMPACT ---------- */
+.impact{padding:130px 0}
+.impact .grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.impact p.lead{max-width:540px;margin:24px 0 44px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);max-width:540px;margin-bottom:48px}
+.stat{padding:26px 0;border-bottom:1px solid var(--line)}
+.stat:nth-child(odd){padding-right:24px;border-right:1px solid var(--line)}
+.stat:nth-child(even){padding-left:28px}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(40px,4.4vw,56px);line-height:1;color:var(--pink)}
+.stat span{font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.impact figure{margin:0;position:relative}
+.impact figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.impact figure figcaption{position:absolute;left:-28px;bottom:36px;background:#000;color:#fff;padding:18px 24px;font-family:var(--display);letter-spacing:.24em;font-size:12px;text-transform:uppercase}
+@media (max-width:900px){.impact .grid{grid-template-columns:1fr}.impact figure figcaption{left:16px}}
+
+/* ---------- FEATURED PROJECTS ---------- */
+.works-head{background:#000;color:#fff;padding:64px 0 70px}
+.works-head .row{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.works-head p{max-width:380px;margin:18px 0 30px;opacity:.85}
+.works-head .arrows{display:flex;gap:10px}
+.track-wrap{background:linear-gradient(#000 0 34%,#fff 34%);padding-bottom:110px}
+.track{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 32px 8px;scrollbar-width:none;max-width:1240px;margin:0 auto}
+.track::-webkit-scrollbar{display:none}
+.card{flex:0 0 min(380px,82vw);scroll-snap-align:start;text-decoration:none;color:var(--ink)}
+.card .ph{aspect-ratio:4/5;overflow:hidden;background:#111}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.card:hover .ph img{transform:scale(1.05)}
+.card .meta{padding:20px 0 0;display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.card small{display:block;font-family:var(--display);color:var(--pink);letter-spacing:.24em;font-size:11px;text-transform:uppercase;margin-bottom:6px}
+.card h3{font-size:24px}
+.card .go{flex-shrink:0}
+
+/* ---------- PROGRAMMES ---------- */
+.prog{padding:20px 0 130px}
+.prog .box{display:grid;grid-template-columns:1fr 1.1fr;background:#0a0a0a;color:#fff;overflow:hidden}
+.prog .ph{min-height:420px;background:url("assets/img/workshop.webp") center/cover;filter:grayscale(1)}
+.prog .txt{padding:58px 56px}
+.prog h2{font-size:clamp(30px,3.4vw,44px);margin-bottom:20px;line-height:1.1}
+.prog .facts{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 34px}
+.prog .facts span{border:1px solid rgba(255,255,255,.25);padding:8px 14px;font-size:12.5px;letter-spacing:.06em}
+.prog .links{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.prog .alt{color:#fff;opacity:.75;font-size:13.5px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px}
+.prog .alt:hover{opacity:1}
+@media (max-width:900px){.prog .box{grid-template-columns:1fr}.prog .ph{min-height:260px}.prog .txt{padding:40px 28px}}
+
+/* ---------- RESEARCH ---------- */
+.research{padding:120px 0 80px}
+.research h2{color:var(--pink);font-size:clamp(44px,6vw,75px)}
+.research p.lead{max-width:900px;margin:30px 0 0}
+.pubs{display:grid;grid-template-columns:110px 1fr 1fr;gap:0 64px;align-items:center;padding:90px 0 130px}
+.pubs .rail{align-self:stretch;background:#d9d9d9}
+.pubs .img{position:relative}
+.pubs .img .counter{position:absolute;top:-46px;left:0;right:0;justify-content:flex-end;gap:14px}
+.pubs .img .arrows{display:flex;gap:10px;margin-left:16px}
+.pubs .frame{aspect-ratio:528/584;overflow:hidden;background:#eee}
+.pubs .frame img{width:100%;height:100%;object-fit:cover;transition:opacity .45s}
+.pubs h2{font-size:clamp(44px,5vw,64px);margin-bottom:22px;min-height:2.1em;display:flex;align-items:flex-end}
+.pubs p{max-width:520px;margin:0 0 40px;min-height:3.3em;transition:opacity .35s}
+@media (max-width:960px){.pubs{grid-template-columns:1fr;gap:40px}.pubs .rail{display:none}.pubs .img .counter{position:static;margin-bottom:14px}.pubs h2{min-height:0}}
+
+/* ---------- CONTACT ---------- */
+.contact{background:#000;color:#fff;padding:90px 0 0;position:relative;overflow:hidden}
+.contact .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;padding-bottom:160px}
+.contact h2{font-size:clamp(44px,6vw,75px);margin-bottom:24px}
+.contact .info{display:grid;gap:26px;align-content:start;padding-top:8px}
+.contact .info b{display:block;font-family:var(--display);font-weight:400;letter-spacing:.26em;font-size:12px;color:var(--pink);margin-bottom:6px;text-transform:uppercase}
+.contact .info a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.contact .info a:hover{border-color:var(--pink)}
+.skyline{position:absolute;left:0;right:0;bottom:44px;height:clamp(60px,12vw,180px);background:url("assets/img/skyline.webp") bottom center/cover repeat-x;opacity:.55;pointer-events:none}
+footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.12);padding:14px 0;font-size:12px;opacity:.75}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:860px){.contact .grid{grid-template-columns:1fr;gap:40px}}
+@media (max-width:600px){.wrap{padding:0 20px}.top,.top.solid{padding-left:20px;padding-right:20px}.track{padding:0 20px 8px}}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="top" id="top">
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  <a class="brand" href="#hero">DSSI STUDIOS</a>
+  <a class="cta" href="#programmes">PROGRAMMES</a>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="col">
+    <div class="label">Overview</div>
+    <nav>
+      <a href="#studio">Studio</a>
+      <a href="#projects">Projects</a>
+      <a href="#programmes">Programmes</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="disc">Social Design<br>Spatial Design<br>Strategic Design</div>
+  </div>
+  <div class="side"><p>DSSI Studios · Department of Design · IIT Hyderabad</p></div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero" aria-roledescription="carousel" aria-label="DSSI Studios highlights">
+  <div class="slide on" style="background-image:url('assets/img/campus-dusk.webp')" data-cap="IIT Hyderabad Campus"></div>
+  <div class="slide" style="background-image:url('assets/img/design-building.webp')" data-cap="Department of Design"></div>
+  <div class="slide" style="background-image:url('assets/img/studio-room.jpg')" data-cap="The Studio"></div>
+  <div class="slide" style="background-image:url('assets/img/community.webp')" data-cap="Community Engagement"></div>
+  <div class="slide" style="background-image:linear-gradient(90deg,#000,rgba(0,0,0,0) 22%),url('assets/img/prototypes.webp');background-size:calc(1.2 * min(max(100vh,620px),900px)) 100%,auto 160%;background-position:right top,right 92%;background-repeat:no-repeat" data-cap="Making &amp; Prototyping"></div>
+  <div class="inner">
+    <div class="wrap" style="width:100%">
+      <h1>DSSI Studios</h1>
+      <p>We design products, services, systems and spaces that create measurable impact for communities, institutions and governments.</p>
+      <a class="btn" href="#projects">Explore work</a>
+    </div>
+  </div>
+  <div class="caption" id="heroCap">IIT Hyderabad Campus</div>
+  <div class="ctrl">
+    <div class="counter"><span id="hCur">01</span><i><b id="hBar" style="width:20%"></b></i><span>05</span></div>
+    <div style="display:flex;gap:10px"><button class="circle" id="hPrev" aria-label="Previous slide">&lt;</button><button class="circle" id="hNext" aria-label="Next slide">&gt;</button></div>
+  </div>
+</section>
+
+<!-- ============ WHAT WE DO ============ -->
+<section class="what" id="studio">
+  <div class="wrap grid">
+    <div class="reveal">
+      <div class="label">DSSI Studio</div>
+      <h2 class="big">What<br>we do ?</h2>
+      <a class="btn" href="#impact">The studio</a>
+    </div>
+    <div class="cols reveal">
+      <div><h3>Social Design</h3><ul><li>Human-centred innovation</li><li>Community engagement</li><li>Behaviour change</li><li>Policy support</li></ul></div>
+      <div><h3>Spatial Design</h3><ul><li>Architecture</li><li>Urban systems</li><li>Public spaces</li><li>Landscape</li><li>Built environments</li></ul></div>
+      <div><h3>Strategic Design</h3><ul><li>Research</li><li>Systems thinking</li><li>Service design</li><li>Design strategy</li><li>Future scenarios</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BELIEF ============ -->
+<section class="belief">
+  <div class="wrap reveal">
+    <h2>Our Belief</h2>
+    <blockquote>“Good design isn't about making things look beautiful. It's about making people's lives better.”</blockquote>
+  </div>
+</section>
+
+<div class="bleed" role="img" aria-label="Department of Design building, IIT Hyderabad"></div>
+
+<!-- ============ IMPACT ============ -->
+<section class="impact" id="impact">
+  <div class="wrap grid">
+    <div class="reveal">
+      <div class="label">Reach</div>
+      <h2 class="big">Areas of impact</h2>
+      <p class="lead">From urban mobility to rural innovation, we design solutions that create lasting social and spatial impact across diverse communities in India, with international collaborations.</p>
+      <div class="stats">
+        <div class="stat"><b data-count="17">0</b><span>States reached</span></div>
+        <div class="stat"><b data-count="60">0</b><span>Projects delivered</span></div>
+        <div class="stat"><b data-count="120">0</b><span>Communities engaged</span></div>
+        <div class="stat"><b data-count="35">0</b><span>Research collaborations</span></div>
+      </div>
+      <a class="btn" href="#projects">Explore areas</a>
+    </div>
+    <figure class="reveal">
+      <img src="assets/img/community.webp" alt="People at a community design event with colourful bunting" loading="lazy">
+      <figcaption>Community engagement</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ FEATURED PROJECTS ============ -->
+<section id="projects">
+  <div class="works-head">
+    <div class="wrap row">
+      <div>
+        <div class="label">Works</div>
+        <h2 class="big">Featured projects</h2>
+        <p>Selected work demonstrating research-led design for meaningful social and spatial impact.</p>
+        <a class="btn" href="#programmes">Projects</a>
+      </div>
+      <div class="arrows"><button class="circle" id="pPrev" aria-label="Scroll projects left">&lt;</button><button class="circle" id="pNext" aria-label="Scroll projects right">&gt;</button></div>
+    </div>
+  </div>
+  <div class="track-wrap">
+    <div class="track" id="track">
+      <a class="card" href="workshop/"><div class="ph"><img src="assets/img/workshop.webp" alt="Leaders in a workshop session" loading="lazy" style="filter:grayscale(1)"></div><div class="meta"><div><small>Strategic Design · Programme</small><h3>Employee Experience Retreat</h3></div><span class="circle go">&gt;</span></div></a>
+      <a class="card" href="#research"><div class="ph"><img src="assets/img/community.webp" alt="Community design event" loading="lazy"></div><div class="meta"><div><small>Social Design</small><h3>Community Engagement</h3></div><span class="circle go">&gt;</span></div></a>
+      <a class="card" href="#research"><div class="ph"><img src="assets/img/prototypes.webp" alt="Material and product prototypes on a studio table" loading="lazy"></div><div class="meta"><div><small>Product Design</small><h3>Material Prototyping</h3></div><span class="circle go">&gt;</span></div></a>
+      <a class="card" href="#research"><div class="ph"><img src="assets/img/design-building.webp" alt="Department of Design building, IIT Hyderabad" loading="lazy"></div><div class="meta"><div><small>Spatial Design</small><h3>Built Environments</h3></div><span class="circle go">&gt;</span></div></a>
+      <a class="card" href="#research"><div class="ph"><img src="assets/img/studio.webp" alt="DSSI studio workspace" loading="lazy"></div><div class="meta"><div><small>Studio</small><h3>Studio Practice</h3></div><span class="circle go">&gt;</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMMES (workshop pages) ============ -->
+<section class="prog" id="programmes">
+  <div class="wrap">
+    <div class="label reveal">Executive Programmes</div>
+    <div class="box reveal">
+      <div class="ph" role="img" aria-label="Executive workshop session"></div>
+      <div class="txt">
+        <div class="label" style="color:var(--pink)">Now enrolling</div>
+        <h2>Driving Organisational Effectiveness Through Employee Experience</h2>
+        <p style="opacity:.85;margin:0">A residential executive retreat by DSSI Studios. Leaders put a number on their organisation's hidden <b style="font-weight:600">Friction Tax</b> and leave with a costed diagnosis and a 30-day pilot plan.</p>
+        <div class="facts"><span>10 practical tools</span><span>7 design phases</span><span>20 seats</span><span>Certificate from IIT Hyderabad</span></div>
+        <div class="links">
+          <a class="btn" href="workshop/">View programme</a>
+          <a class="alt" href="workshop/original-with-chatbot.html">Original page + chatbot</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section id="research">
+  <div class="research"><div class="wrap reveal">
+    <h2>Research<br>&amp; Insights</h2>
+    <p class="lead">Our research explores the intersection of people, places, and systems to create meaningful social and spatial impact. Through interdisciplinary collaboration, we generate insights that inform innovative, evidence-based design solutions for communities, institutions, and governments.</p>
+  </div></div>
+
+  <div class="wrap">
+    <div class="pubs reveal">
+      <div class="rail" aria-hidden="true"></div>
+      <div class="img">
+        <div class="counter"><span id="bCur">01</span><i><b id="bBar" style="width:20%"></b></i><span>05</span>
+          <span class="arrows"><button class="circle" id="bPrev" aria-label="Previous publication type">&lt;</button><button class="circle" id="bNext" aria-label="Next publication type">&gt;</button></span></div>
+        <div class="frame"><img id="bImg" src="assets/img/papers.webp" alt="Printed research papers" loading="lazy"></div>
+      </div>
+      <div>
+        <div class="label">Publications</div>
+        <h2 id="bTitle">Research<br>Papers</h2>
+        <p id="bText">Advancing knowledge through interdisciplinary research that addresses complex social, spatial, and systemic challenges.</p>
+        <a class="btn" href="#contact">Mobility design</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap grid">
+    <div class="reveal">
+      <div class="label">Contact</div>
+      <h2>Let's design<br>for impact</h2>
+      <p style="max-width:460px;opacity:.85">Partner with us on research, design projects or executive programmes. We work with communities, institutions and governments across India.</p>
+    </div>
+    <div class="info reveal">
+      <div><b>Studio</b>DSSI Studios, Department of Design<br>Indian Institute of Technology Hyderabad<br>Kandi, Sangareddy, Telangana</div>
+      <div><b>Programmes</b><a href="tel:+919156852698">+91 91568 52698</a></div>
+      <div><b>Online</b><a href="https://iith.ac.in" target="_blank" rel="noopener">iith.ac.in</a> · <a href="https://cce.iith.ac.in" target="_blank" rel="noopener">cce.iith.ac.in</a></div>
+    </div>
+  </div>
+  <div class="skyline" aria-hidden="true"></div>
+  <footer><div class="wrap"><span>© 2026 DSSI Studios · Department of Design, IIT Hyderabad</span><a href="#hero" style="text-decoration:none">Back to top ↑</a></div></footer>
+</section>
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id), pad=n=>String(n).padStart(2,'0');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Header + menu
+  const top=$('top'), burger=$('burger'), menu=$('menu');
+  addEventListener('scroll',()=>top.classList.toggle('solid',scrollY>60),{passive:true});
+  function setMenu(open){document.body.classList.toggle('menu-open',open);burger.setAttribute('aria-expanded',open);menu.setAttribute('aria-hidden',!open);document.body.style.overflow=open?'hidden':'';}
+  burger.onclick=()=>setMenu(!document.body.classList.contains('menu-open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false);});
+
+  // Hero carousel
+  const slides=[...document.querySelectorAll('.slide')]; let h=0, ht;
+  function hero(i){ slides[h].classList.remove('on'); h=(i+slides.length)%slides.length; slides[h].classList.add('on');
+    $('hCur').textContent=pad(h+1); $('hBar').style.width=((h+1)/slides.length*100)+'%'; $('heroCap').textContent=slides[h].dataset.cap; restart(); }
+  function restart(){ clearInterval(ht); if(!reduce) ht=setInterval(()=>hero(h+1),6000); }
+  $('hPrev').onclick=()=>hero(h-1); $('hNext').onclick=()=>hero(h+1); restart();
+
+  // Projects track
+  const track=$('track'), step=()=>track.querySelector('.card').offsetWidth+26;
+  $('pPrev').onclick=()=>track.scrollBy({left:-step(),behavior:'smooth'});
+  $('pNext').onclick=()=>track.scrollBy({left:step(),behavior:'smooth'});
+
+  // Publications slider (content from the Figma PUBLICATIONS frames)
+  const pubs=[
+    ['Research<br>Papers','Advancing knowledge through interdisciplinary research that addresses complex social, spatial, and systemic challenges.','papers.webp','Printed research papers'],
+    ['Books','Publications that document design methodologies, research findings, and innovative approaches to creating meaningful impact.','prototypes.webp','Studio table with design artefacts'],
+    ['Articles','Insights, perspectives, and thought leadership exploring contemporary challenges in design, innovation, and public systems.','studio.webp','DSSI studio workspace'],
+    ['Reports','Comprehensive research reports and policy documents translating evidence into actionable design strategies and recommendations.','community.webp','Community engagement event'],
+    ['Presentations','Conference talks, workshops, and academic presentations sharing research, project outcomes, and design innovations with diverse audiences.','workshop.webp','Workshop presentation']
+  ]; let b=0;
+  function pub(i){ b=(i+pubs.length)%pubs.length; const [t,x,img,alt]=pubs[b]; const im=$('bImg'), tx=$('bText');
+    im.style.opacity=0; tx.style.opacity=0;
+    setTimeout(()=>{ im.src='assets/img/'+img; im.alt=alt; $('bTitle').innerHTML=t; tx.textContent=x; im.style.opacity=1; tx.style.opacity=1; },250);
+    $('bCur').textContent=pad(b+1); $('bBar').style.width=((b+1)/pubs.length*100)+'%'; }
+  $('bPrev').onclick=()=>pub(b-1); $('bNext').onclick=()=>pub(b+1);
+
+  // Reveal + count-up
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; e.target.classList.add('in'); io.unobserve(e.target);
+    e.target.querySelectorAll('[data-count]').forEach(el=>{ const end=+el.dataset.count; if(reduce){el.textContent=end+'+';return;}
+      const t0=performance.now(); (function f(t){ const p=Math.min(1,(t-t0)/1400); el.textContent=Math.round(end*(1-Math.pow(1-p,3)))+(p===1?'+':''); if(p<1) requestAnimationFrame(f); })(t0); }); }),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(r=>io.observe(r));
+})();
+</script>
+</body>
+</html>
