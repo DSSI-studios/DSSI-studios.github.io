@@ -29,13 +29,13 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;mar
 .label{display:flex;align-items:center;gap:14px;font-family:var(--display);font-size:12px;letter-spacing:.32em;text-transform:uppercase;margin-bottom:22px}
 .label::after{content:"";width:64px;height:1px;background:currentColor;opacity:.6}
 .big{font-size:clamp(44px,6.4vw,78px)}
-.pink{color:var(--pink)}
-.btn{display:inline-flex;align-items:center;gap:34px;padding:21px 30px;border:1px solid var(--pink);color:var(--pink);background:transparent;
+.pink{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:34px;padding:21px 30px;border:1px solid var(--ink);color:var(--ink);background:transparent;
   font-family:var(--display);font-size:13px;letter-spacing:.32em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .25s,color .25s}
 .btn::after{content:">";letter-spacing:0}
-.btn:hover{background:var(--pink);color:#fff}
-.circle{width:43px;height:43px;border-radius:50%;border:1px solid var(--pink);background:transparent;color:var(--pink);font:300 18px var(--body);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
-.circle:hover{background:var(--pink);color:#fff}
+.btn:hover{background:var(--ink);color:#fff}
+.circle{width:43px;height:43px;border-radius:50%;border:1px solid var(--ink);background:transparent;color:var(--ink);font:300 18px var(--body);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.circle:hover{background:var(--ink);color:#fff}
 .counter{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:300}
 .counter i{display:block;width:92px;height:1px;background:currentColor;opacity:.35;position:relative}
 .counter i b{position:absolute;left:0;top:-.5px;height:2px;background:var(--pink);transition:width .5s}
@@ -58,7 +58,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;mar
 .menu-open .top{color:var(--ink);background:transparent}
 .menu .col{padding:120px 64px 64px;display:flex;flex-direction:column;justify-content:center}
 .menu nav a{display:block;font-family:var(--display);font-size:clamp(40px,5.4vw,64px);text-transform:uppercase;text-decoration:none;line-height:1.12;transition:color .2s,transform .2s}
-.menu nav a:hover{color:var(--pink);transform:translateX(8px)}
+.menu nav a:hover{color:var(--grey);transform:translateX(8px)}
 .menu .disc{margin-top:44px;font-family:var(--display);font-size:15px;letter-spacing:.3em;line-height:1.8;text-transform:uppercase}
 .menu .side{background:url("assets/img/studio.webp") center/cover;position:relative}
 .menu .side::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent 60%)}
@@ -82,7 +82,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;mar
 .what{padding:130px 0 110px}
 .what .grid{display:grid;grid-template-columns:1.1fr 2fr;gap:56px;align-items:start}
 .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;padding-top:12px}
-.cols h3{font-size:clamp(26px,2.5vw,34px);color:var(--pink);margin-bottom:18px}
+.cols h3{font-size:clamp(26px,2.5vw,34px);color:var(--ink);margin-bottom:18px}
 .cols ul{list-style:none;margin:0;padding:0}
 .cols li{padding:7px 0;border-bottom:1px solid var(--line);font-size:15px}
 .what .btn{margin-top:54px}
@@ -96,7 +96,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;mar
 @media (min-width:1000px){.belief blockquote{white-space:nowrap}}
 
 /* ---------- FULL-BLEED ---------- */
-.bleed{height:clamp(320px,49vw,702px);background:url("assets/img/cohort-courtyard.jpg") center 72%/cover}
+.bleed{height:clamp(260px,46vw,600px);background:url("assets/img/cohort-courtyard.jpg") center 72%/cover}
 
 /* ---------- IMPACT ---------- */
 .impact{padding:130px 0}
@@ -106,7 +106,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;mar
 .stat{padding:26px 0;border-bottom:1px solid var(--line)}
 .stat:nth-child(odd){padding-right:24px;border-right:1px solid var(--line)}
 .stat:nth-child(even){padding-left:28px}
-.stat b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(40px,4.4vw,56px);line-height:1;color:var(--pink)}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(40px,4.4vw,56px);line-height:1;color:var(--ink)}
 .stat span{font-size:13px;letter-spacing:.12em;text-transform:uppercase}
 .impact figure{margin:0;position:relative}
 .impact figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
@@ -126,7 +126,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;mar
 .card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
 .card:hover .ph img{transform:scale(1.05)}
 .card .meta{padding:20px 0 0;display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
-.card small{display:block;font-family:var(--display);color:var(--pink);letter-spacing:.24em;font-size:11px;text-transform:uppercase;margin-bottom:6px}
+.card small{display:block;font-family:var(--display);color:var(--ink);letter-spacing:.24em;font-size:11px;text-transform:uppercase;margin-bottom:6px}
 .card h3{font-size:24px}
 .card .go{flex-shrink:0}
 
@@ -146,10 +146,10 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;mar
 
 /* ---------- RESEARCH ---------- */
 .research{padding:120px 0 80px}
-.research h2{color:var(--pink);font-size:clamp(44px,6vw,75px)}
+.research h2{color:var(--ink);font-size:clamp(44px,6vw,75px)}
 .research p.lead{max-width:900px;margin:30px 0 0}
-.pubs{display:grid;grid-template-columns:110px 1fr 1fr;gap:0 64px;align-items:center;padding:90px 0 130px}
-.pubs .rail{align-self:stretch;background:#d9d9d9}
+.pubs{display:grid;grid-template-columns:1.15fr 1fr;gap:0 64px;align-items:center;padding:90px 0 130px}
+.pubs .rail{display:none}
 .pubs .img{position:relative}
 .pubs .img .counter{position:absolute;top:-46px;left:0;right:0;justify-content:flex-end;gap:14px}
 .pubs .img .arrows{display:flex;gap:10px;margin-left:16px}
@@ -207,6 +207,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   <div class="slide" style="background-image:url('assets/img/campus-dusk.webp')" data-cap="IIT Hyderabad Campus"></div>
   <div class="slide" style="background-image:url('assets/img/community.webp')" data-cap="Community Engagement"></div>
   <div class="slide" style="background-image:linear-gradient(90deg,#000,rgba(0,0,0,0) 22%),url('assets/img/prototypes.webp');background-size:calc(1.2 * min(max(100vh,620px),900px)) 100%,auto 160%;background-position:right top,right 92%;background-repeat:no-repeat" data-cap="Making &amp; Prototyping"></div>
+  <div class="slide" style="background-image:url('assets/img/drone.jpg');background-size:auto 130%;background-position:8% 62%" data-cap="First-Responder Drone"></div>
   <div class="inner">
     <div class="wrap" style="width:100%">
       <h1>DSSI Studios</h1>
@@ -216,7 +217,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   </div>
   <div class="caption" id="heroCap">The Studio</div>
   <div class="ctrl">
-    <div class="counter"><span id="hCur">01</span><i><b id="hBar" style="width:25%"></b></i><span>04</span></div>
+    <div class="counter"><span id="hCur">01</span><i><b id="hBar" style="width:20%"></b></i><span>05</span></div>
     <div style="display:flex;gap:10px"><button class="circle" id="hPrev" aria-label="Previous slide">&lt;</button><button class="circle" id="hNext" aria-label="Next slide">&gt;</button></div>
   </div>
 </section>
@@ -246,7 +247,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   </div>
 </section>
 
-<div class="bleed" role="img" aria-label="Participants of the Driving Organisational Effectiveness Through Employee Experience programme in a courtyard at IIT Hyderabad"></div>
+<div class="wrap"><div class="bleed" role="img" aria-label="Participants of the Driving Organisational Effectiveness Through Employee Experience programme in a courtyard at IIT Hyderabad"></div></div>
 
 <!-- ============ IMPACT ============ -->
 <section class="impact" id="impact">
@@ -287,7 +288,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
     <div class="track" id="track">
       <a class="card" href="workshop/"><div class="ph"><img src="assets/img/workshop.webp" alt="Leaders in a workshop session" loading="lazy" style="filter:grayscale(1)"></div><div class="meta"><div><small>Strategic Design · Programme</small><h3>Employee Experience Retreat</h3></div><span class="circle go">&gt;</span></div></a>
       <a class="card" href="#research"><div class="ph"><img src="assets/img/community.webp" alt="Community design event" loading="lazy"></div><div class="meta"><div><small>Social Design</small><h3>Community Engagement</h3></div><span class="circle go">&gt;</span></div></a>
-      <a class="card" href="#research"><div class="ph"><img src="assets/img/prototypes.webp" alt="Material and product prototypes on a studio table" loading="lazy"></div><div class="meta"><div><small>Product Design</small><h3>Material Prototyping</h3></div><span class="circle go">&gt;</span></div></a>
+      <a class="card" href="#research"><div class="ph"><img src="assets/img/proto-ambulance.jpg" alt="Concept compact ambulance driving through a busy street, from an M.Des thesis by Mohammed Mansur" loading="lazy"></div><div class="meta"><div><small>Product Design</small><h3>Material Prototyping</h3></div><span class="circle go">&gt;</span></div></a>
       <a class="card" href="#research"><div class="ph"><img src="assets/img/design-building.webp" alt="Department of Design building, IIT Hyderabad" loading="lazy"></div><div class="meta"><div><small>Spatial Design</small><h3>Built Environments</h3></div><span class="circle go">&gt;</span></div></a>
       <a class="card" href="#research"><div class="ph"><img src="assets/img/studio.webp" alt="DSSI studio workspace" loading="lazy"></div><div class="meta"><div><small>Studio</small><h3>Studio Practice</h3></div><span class="circle go">&gt;</span></div></a>
     </div>
@@ -327,13 +328,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
       <div class="img">
         <div class="counter"><span id="bCur">01</span><i><b id="bBar" style="width:20%"></b></i><span>05</span>
           <span class="arrows"><button class="circle" id="bPrev" aria-label="Previous publication type">&lt;</button><button class="circle" id="bNext" aria-label="Next publication type">&gt;</button></span></div>
-        <div class="frame"><img id="bImg" src="assets/img/papers.webp" alt="Printed research papers" loading="lazy"></div>
+        <div class="frame"><img id="bImg" src="assets/img/pub-papers.jpg" alt="Pencil design sketch on grid paper" loading="lazy"></div>
       </div>
       <div>
         <div class="label">Publications</div>
         <h2 id="bTitle">Research<br>Papers</h2>
         <p id="bText">Advancing knowledge through interdisciplinary research that addresses complex social, spatial, and systemic challenges.</p>
-        <a class="btn" href="#contact">Mobility design</a>
+        <a class="btn" href="#contact">Mobilizing design</a>
       </div>
     </div>
   </div>
@@ -383,11 +384,11 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   // Publications slider (content from the Figma PUBLICATIONS frames)
   const pubs=[
-    ['Research<br>Papers','Advancing knowledge through interdisciplinary research that addresses complex social, spatial, and systemic challenges.','papers.webp','Printed research papers'],
-    ['Books','Publications that document design methodologies, research findings, and innovative approaches to creating meaningful impact.','prototypes.webp','Studio table with design artefacts'],
-    ['Articles','Insights, perspectives, and thought leadership exploring contemporary challenges in design, innovation, and public systems.','studio.webp','DSSI studio workspace'],
-    ['Reports','Comprehensive research reports and policy documents translating evidence into actionable design strategies and recommendations.','community.webp','Community engagement event'],
-    ['Presentations','Conference talks, workshops, and academic presentations sharing research, project outcomes, and design innovations with diverse audiences.','workshop.webp','Workshop presentation']
+    ['Research<br>Papers','Advancing knowledge through interdisciplinary research that addresses complex social, spatial, and systemic challenges.','pub-papers.jpg','Pencil design sketch on grid paper'],
+    ['Books','Publications that document design methodologies, research findings, and innovative approaches to creating meaningful impact.','pub-books.jpg','Bookshelves filled with books'],
+    ['Articles','Insights, perspectives, and thought leadership exploring contemporary challenges in design, innovation, and public systems.','pub-articles.jpg','Newspaper with glasses and a phone'],
+    ['Reports','Comprehensive research reports and policy documents translating evidence into actionable design strategies and recommendations.','pub-reports.jpg','Printed charts and a tablet on a desk'],
+    ['Presentations','Conference talks, workshops, and academic presentations sharing research, project outcomes, and design innovations with diverse audiences.','pub-presentations.jpg','Prof. Srikar AVR presenting at the Driving Organisational Effectiveness programme, IIT Hyderabad']
   ]; let b=0;
   function pub(i){ b=(i+pubs.length)%pubs.length; const [t,x,img,alt]=pubs[b]; const im=$('bImg'), tx=$('bText');
     im.style.opacity=0; tx.style.opacity=0;
