@@ -212,6 +212,7 @@ h1,h2,h3{line-height:1.2;margin:0}
 .fac{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .fcard{display:flex;gap:20px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;align-items:flex-start}
 .fphoto{width:92px;height:92px;border-radius:18px;flex-shrink:0;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:700}
+img.fphoto{display:block;width:104px;height:104px;border-radius:50%;object-fit:cover;background:#eee;box-shadow:0 0 0 4px #fff,0 0 0 5px var(--line)}
 .fcard h3{font-size:18px;font-weight:700}
 .fcard .role{color:var(--accent);font-size:13.5px;font-weight:600;margin:2px 0 10px}
 .fcard ul{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
@@ -371,13 +372,13 @@ footer .bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;displa
     </div>
     <div class="videos reveal" style="margin-top:28px">
       <div class="vcard">
-        <video controls playsinline preload="none" poster="assets/poster-highlights.webp" title="Programme Highlights">
+        <video controls controlslist="nodownload noremoteplayback" disablepictureinpicture oncontextmenu="return false" playsinline preload="none" poster="assets/poster-highlights.webp" title="Programme Highlights">
           <source src="assets/highlights.mp4" type="video/mp4">
         </video>
         <h3>Programme Highlights</h3>
       </div>
       <div class="vcard">
-                <video controls playsinline preload="none" poster="assets/poster-cohort2.webp" title="Glimpse from a past cohort">
+                <video controls controlslist="nodownload noremoteplayback" disablepictureinpicture oncontextmenu="return false" playsinline preload="none" poster="assets/poster-cohort2.webp" title="Glimpse from a past cohort">
           <source src="assets/cohort2.mp4" type="video/mp4">
         </video>
         <h3>A glimpse from Cohort 2</h3>
@@ -549,9 +550,8 @@ footer .bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;displa
       <h2>Faculty</h2>
     </div>
     <div class="fac reveal">
-      <!-- Replace the initials with real photos: <img class="fphoto" src="..." alt="..."> -->
       <div class="fcard">
-        <div class="fphoto">SA</div>
+        <img class="fphoto" src="assets/faculty-srikar-avr.jpg" alt="Asst. Prof. Srikar AVR" width="104" height="104" loading="lazy">
         <div>
           <h3>Asst. Prof. Srikar AVR</h3>
           <div class="role">Department of Design, IIT Hyderabad</div>
@@ -562,7 +562,7 @@ footer .bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;displa
         </div>
       </div>
       <div class="fcard">
-        <div class="fphoto">PS</div>
+        <img class="fphoto" src="assets/faculty-parthajeet-sarma.jpg" alt="Parthajeet Sarma" width="104" height="104" loading="lazy">
         <div>
           <h3>Parthajeet Sarma</h3>
           <div class="role">Workplace Transformation Expert</div>
