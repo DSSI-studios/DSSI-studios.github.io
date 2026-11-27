@@ -72,6 +72,9 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;mar
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.25) 100%)}
 .hero .inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center}
 .hero h1{font-size:clamp(48px,6.4vw,84px);letter-spacing:.02em}
+.hero .tagline{display:block;margin-top:14px;font-family:var(--display);font-size:clamp(14px,1.4vw,19px);letter-spacing:.32em;text-transform:uppercase;opacity:.95}
+.sdg b{font-weight:inherit}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .hero p{max-width:530px;font-size:16px;font-weight:400;margin:22px 0 38px;opacity:.92}
 .hero .ctrl{position:absolute;z-index:3;right:32px;bottom:44px;display:flex;align-items:center;gap:26px}
 .hero .ctrl .counter{color:#fff}
@@ -119,10 +122,13 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;mar
 .works-head p{max-width:380px;margin:18px 0 30px;opacity:.85}
 .works-head .arrows{display:flex;gap:10px}
 .track-wrap{background:linear-gradient(#000 0 34%,#fff 34%);padding-bottom:110px}
-.track{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 32px 8px;scrollbar-width:none;max-width:1240px;margin:0 auto}
+.track{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 0 8px;scrollbar-width:none;width:min(1176px,calc(100% - 64px));margin:0 auto}
 .track::-webkit-scrollbar{display:none}
-.card{flex:0 0 min(380px,82vw);scroll-snap-align:start;text-decoration:none;color:var(--ink)}
-.card .ph{aspect-ratio:4/5;overflow:hidden;background:#111}
+.card{flex:0 0 calc((100% - 52px)/3);scroll-snap-align:start;text-decoration:none;color:var(--ink)}
+@media (max-width:900px){.card{flex-basis:calc((100% - 26px)/2)}}
+@media (max-width:600px){.card{flex-basis:85%}}
+.card .ph{aspect-ratio:4/5;overflow:hidden;background:#111;position:relative}
+.card .credit{position:absolute;right:0;bottom:0;background:rgba(0,0,0,.55);color:#fff;font-size:10px;letter-spacing:.04em;padding:4px 8px;line-height:1.3}
 .card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
 .card:hover .ph img{transform:scale(1.05)}
 .card .meta{padding:20px 0 0;display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
@@ -174,7 +180,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;mar
 footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.12);padding:14px 0;font-size:12px;opacity:.75}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 @media (max-width:860px){.contact .grid{grid-template-columns:1fr;gap:40px}}
-@media (max-width:600px){.wrap{padding:0 20px}.top,.top.solid{padding-left:20px;padding-right:20px}.track{padding:0 20px 8px}}
+@media (max-width:600px){.wrap{padding:0 20px}.top,.top.solid{padding-left:20px;padding-right:20px}.track{width:calc(100% - 40px)}}
 </style>
 </head>
 <body>
@@ -211,6 +217,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   <div class="inner">
     <div class="wrap" style="width:100%">
       <h1>DSSI Studios</h1>
+      <span class="tagline">Design for Social and Spatial Impact</span>
       <p>We design products, services, systems and spaces that create measurable impact for communities, institutions and governments.</p>
       <a class="btn" href="#projects">Explore work</a>
     </div>
@@ -232,7 +239,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
     </div>
     <div class="cols reveal">
       <div><h3>Social Design</h3><ul><li>Human-centred innovation</li><li>Community engagement</li><li>Behaviour change</li><li>Policy support</li></ul></div>
-      <div><h3>Spatial Design</h3><ul><li>Architecture</li><li>Urban systems</li><li>Public spaces</li><li>Landscape</li><li>Built environments</li></ul></div>
+      <div><h3>Spatial Design</h3><ul><li>Architecture</li><li>Urban systems</li><li>Public spaces</li><li>Product designscape</li><li>Built environments</li></ul></div>
       <div><h3>Strategic Design</h3><ul><li>Research</li><li>Systems thinking</li><li>Service design</li><li>Design strategy</li><li>Future scenarios</li></ul></div>
     </div>
   </div>
@@ -286,10 +293,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   </div>
   <div class="track-wrap">
     <div class="track" id="track">
-      <a class="card" href="workshop/"><div class="ph"><img src="assets/img/workshop.webp" alt="Leaders in a workshop session" loading="lazy" style="filter:grayscale(1)"></div><div class="meta"><div><small>Strategic Design · Programme</small><h3>Employee Experience Retreat</h3></div><span class="circle go">&gt;</span></div></a>
+      <a class="card" href="workshop/"><div class="ph"><img src="assets/img/strategic-doe.jpg" alt="Driving Organisational Effectiveness cohort on the lawn in front of the Knowledge Resource Centre, IIT Hyderabad" loading="lazy"></div><div class="meta"><div><small>Strategic Design · Programme</small><h3>Employee Experience Retreat</h3></div><span class="circle go">&gt;</span></div></a>
       <a class="card" href="#research"><div class="ph"><img src="assets/img/community.webp" alt="Community design event" loading="lazy"></div><div class="meta"><div><small>Social Design</small><h3>Community Engagement</h3></div><span class="circle go">&gt;</span></div></a>
       <a class="card" href="#research"><div class="ph"><img src="assets/img/proto-ambulance.jpg" alt="Concept compact ambulance driving through a busy street, from an M.Des thesis by Mohammed Mansur" loading="lazy"></div><div class="meta"><div><small>Product Design</small><h3>Material Prototyping</h3></div><span class="circle go">&gt;</span></div></a>
-      <a class="card" href="#research"><div class="ph"><img src="assets/img/design-building.webp" alt="Department of Design building, IIT Hyderabad" loading="lazy"></div><div class="meta"><div><small>Spatial Design</small><h3>Built Environments</h3></div><span class="circle go">&gt;</span></div></a>
+      <a class="card" href="#research"><div class="ph"><img src="assets/img/lhc-iith.jpg" alt="Sculptural concrete entrance of the Lecture Hall Complex, IIT Hyderabad" loading="lazy"><span class="credit">Lecture Hall Complex, IITH · CCBA Designs · Photo: Ramprasad Akkisetti, Ashish Bhonde</span></div><div class="meta"><div><small>Spatial Design</small><h3>Built Environments</h3></div><span class="circle go">&gt;</span></div></a>
       <a class="card" href="#research"><div class="ph"><img src="assets/img/studio.webp" alt="DSSI studio workspace" loading="lazy"></div><div class="meta"><div><small>Studio</small><h3>Studio Practice</h3></div><span class="circle go">&gt;</span></div></a>
     </div>
   </div>
@@ -345,7 +352,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   <div class="wrap grid">
     <div class="reveal">
       <div class="label">Contact</div>
-      <h2>Let's design<br>for impact</h2>
+      <h2>Let's design<br>for <span class="sdg"><span class="sr">impact</span><b aria-hidden="true" style="color:#E5243B">I</b><b aria-hidden="true" style="color:#FCC30B">M</b><b aria-hidden="true" style="color:#4C9F38">P</b><b aria-hidden="true" style="color:#26BDE2">A</b><b aria-hidden="true" style="color:#FD6925">C</b><b aria-hidden="true" style="color:#DD1367">T</b></span></h2>
       <p style="max-width:460px;opacity:.85">Partner with us on research, design projects or executive programmes. We work with communities, institutions and governments across India.</p>
     </div>
     <div class="info reveal">
